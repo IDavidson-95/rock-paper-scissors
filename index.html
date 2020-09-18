@@ -1,24 +1,95 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Rock Paper Scissors</title>
     <meta charset="UTF-8">
 </head>
+
 <body>
     <script>
+        function game() {
+            let usrDecision;
+            let usrChoice;
+
+            let compOptions;
+            let compChoice;
+
+            let usrScore = 0;
+            let compScore = 0;
+
+
+            function playRound() {
+                usrChoice = usrDecision.toLowerCase()
+
+                compOptions = ['rock', 'paper', 'scissors'];
+                compChoice = compOptions[Math.floor(Math.random() * compOptions.length)];
+
+                if (compChoice === usrChoice) {
+                    console.log(`Oh dear, ${compChoice} and ${usrChoice} are the same! It's a tie!`);
+                } else if (compChoice === 'rock' && usrChoice === 'paper' || compChoice === 'paper' && usrChoice === 'scissors' || compChoice === 'scissors' && usrChoice === 'rock') {
+                    usrScore += 1;
+                    console.log(`You win, ${usrChoice} beats ${compChoice}!`);
+                } else if (compChoice === 'paper' && usrChoice === 'rock' || compChoice === 'scissors' && usrChoice === 'paper' || compChoice === 'rock' && usrChoice === 'scissors') {
+                    console.log(`You lose, ${compChoice} beats ${usrChoice}!`);
+                    compScore += 1;
+                } else {
+                    console.log(`Oops, ${usrChoice} is invalid, please try again.`);
+                }
+            }
+
+            function roundEnd() {
+                console.log('Current score');
+                console.log(`You: ${usrScore}`);
+                console.log(`Computer: ${compScore}`);
+            }
+
+            function winCondition() {
+                if (usrScore < compScore) {
+                    console.log("END OF GAME");
+                    console.log("Total points:");
+                    console.log(`You: ${usrScore}`);
+                    console.log(`Computer: ${compScore}`);
+                    console.log('You lose the game!');
+                } else {
+                    console.log("END OF GAME");
+                    console.log("Total points:");
+                    console.log(`You: ${usrScore}`);
+                    console.log(`Computer: ${compScore}`);
+                    console.log('You lose the game!');
+
+                }
+            }
+
+            for (let round = 0; round < 5; round++) {
+                usrDecision = prompt("Type either rock, paper, or scissors to start the game!");
+                playRound();
+                roundEnd();
+            }
+
+            console.log(winCondition());
+        }
 
     </script>
 </body>
+
 </html>
 
 
-<!--
-    Create function for computer to randomly choose either rock/paper?scissors
+<!-- Create function (computerPlay())for computer to randomly choose either rock/paper/scissors and take user input
+         Create array with options rock/paper/scissors
+         Create variable to randomly choose from array
+         Create variable for user input (prompt) and store choice
+             Choice should be case insensitive
 
-    Create function for program to accept user input
+     Create function that compares computer choice to user choice and returns the value
 
-    Create function that determines winner
-
-    Create function that executes above 5 times.
-
---> 
+     Create function that executes above 5 times and keeps score. Winner will be declared best 3 out of 5.
+         Create variable to hold score for computer
+             let compScore = 0
+         Create variable to hold score for user
+             let usrScore = 0
+         When computer wins, increase variable by 1
+         When user wins, increase variable by 1
+         When variable for computer or user reaches 3, exit loop
+         Return winner -->
