@@ -27,13 +27,16 @@
 
                 if (compChoice === usrChoice) {
                     console.log(`Oh dear, ${compChoice} and ${usrChoice} are the same! It's a tie!`);
-                } else if (compChoice === 'rock' && usrChoice === 'paper' || compChoice === 'paper' && usrChoice === 'scissors' || compChoice === 'scissors' && usrChoice === 'rock') {
+                }
+                else if (compChoice === 'rock' && usrChoice === 'paper' || compChoice === 'paper' && usrChoice === 'scissors' || compChoice === 'scissors' && usrChoice === 'rock') {
                     usrScore += 1;
                     console.log(`You win, ${usrChoice} beats ${compChoice}!`);
-                } else if (compChoice === 'paper' && usrChoice === 'rock' || compChoice === 'scissors' && usrChoice === 'paper' || compChoice === 'rock' && usrChoice === 'scissors') {
+                }
+                else if (compChoice === 'paper' && usrChoice === 'rock' || compChoice === 'scissors' && usrChoice === 'paper' || compChoice === 'rock' && usrChoice === 'scissors') {
                     console.log(`You lose, ${compChoice} beats ${usrChoice}!`);
                     compScore += 1;
-                } else {
+                }
+                else {
                     console.log(`Oops, ${usrChoice} is invalid, please try again.`);
                 }
             }
