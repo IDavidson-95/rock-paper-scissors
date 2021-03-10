@@ -53,13 +53,21 @@
                     console.log("Total points:");
                     console.log(`You: ${usrScore}`);
                     console.log(`Computer: ${compScore}`);
-                    console.log('You lose the game!');
-                } else {
+                    console.log('You lose!');
+                } else if (usrScore > compScore) {
                     console.log("END OF GAME");
                     console.log("Total points:");
                     console.log(`You: ${usrScore}`);
                     console.log(`Computer: ${compScore}`);
-                    console.log('You lose the game!');
+                    console.log('You win!');
+                }
+                
+                else {
+                    console.log("END OF GAME");
+                    console.log("Total points:");
+                    console.log(`You: ${usrScore}`);
+                    console.log(`Computer: ${compScore}`);
+                    console.log("It's a tie!");
 
                 }
             }
